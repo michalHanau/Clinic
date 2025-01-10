@@ -11,6 +11,16 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
+app.use(express.json());
+
+app.use(cors());
+  
+app.use('/api/appointments', appointmentsRoute);
+app.use('/api/customers', customersRoute);
+app.use('/api/treatments', treatmentsRoute);
+app.use('/api/login', loginRoute);
+app.use('/api/auth', authRoutes);
+
 
 const path = require('path');
 // שמש את קבצי ה-Build של React
@@ -23,15 +33,6 @@ app.get('*', (req, res) => {
 
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
-
-app.use(cors());
-  
-app.use('/api/appointments', appointmentsRoute);
-app.use('/api/customers', customersRoute);
-app.use('/api/treatments', treatmentsRoute);
-app.use('/api/login', loginRoute);
-app.use('/api/auth', authRoutes);
 
 
 (async function() {
