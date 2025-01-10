@@ -12,6 +12,7 @@ const cors = require('cors');
 
 const app = express();
 
+const path = require('path');
 // שמש את קבצי ה-Build של React
 app.use(express.static(path.join(__dirname, 'build')));
 
