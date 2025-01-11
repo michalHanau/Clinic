@@ -6,7 +6,7 @@ const roles = require('../enum/rolesEnum');
 const oAuth2Client = new google.auth.OAuth2(
     process.env.Client_ID, // Client ID
     process.env.Client_Secret, // Client Secret
-    'http://localhost:3000/api/auth/oauth2callback' // Redirect URI
+    'http://localhost:3000/auth/oauth2callback' // Redirect URI
 );
 
 const scopes = ['https://www.googleapis.com/auth/calendar'];
