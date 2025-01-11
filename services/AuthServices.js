@@ -3,10 +3,14 @@ const { google } = require('googleapis');
 const customersModel = require('../models/customersModel');
 const roles = require('../enum/rolesEnum');
 
+const redirectUri = process.env.NODE_ENV === 'production' 
+    ? 'https://miri-clinic-dc296f989d6e.herokuapp.com/auth/oauth2callback'  
+    : 'http://localhost:3000/auth/oauth2callback';  
+
 const oAuth2Client = new google.auth.OAuth2(
-    process.env.Client_ID, // Client ID
-    process.env.Client_Secret, // Client Secret
-    'http://localhost:3000/auth/oauth2callback' // Redirect URI
+    process.env.Client_ID, 
+    process.env.Client_Secret, 
+    redirectUri
 );
 
 const scopes = ['https://www.googleapis.com/auth/calendar'];
