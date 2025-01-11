@@ -15,11 +15,11 @@ app.use(express.json());
 
 app.use(cors());
   
-app.use('/api/appointments', appointmentsRoute);
-app.use('/api/customers', customersRoute);
-app.use('/api/treatments', treatmentsRoute);
-app.use('/api/login', loginRoute);
-app.use('/api/auth', authRoutes);
+app.use('/appointments', appointmentsRoute);
+app.use('/customers', customersRoute);
+app.use('/treatments', treatmentsRoute);
+app.use('/login', loginRoute);
+app.use('/auth', authRoutes);
 
 
 const path = require('path');
