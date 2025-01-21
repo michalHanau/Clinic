@@ -218,7 +218,6 @@ class AppointmentService {
         if (!treatment) {
             throw new Error('Treatment not found');
         }
-consol.log(newAppointments.customer_id)
         //למציאת שם הלקוחה
         const customer = await customersModel.findOne({ customer_id: newAppointments.customer_id });
         if (!customer) {
