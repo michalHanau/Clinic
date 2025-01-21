@@ -218,13 +218,13 @@ class AppointmentService {
         if (!treatment) {
             throw new Error('Treatment not found');
         }
-
+consol.log(newAppointments.customer_id)
         //למציאת שם הלקוחה
         const customer = await customersModel.findOne({ customer_id: newAppointments.customer_id });
         if (!customer) {
             throw new Error('customer not found');
         }
-        console.log("treatment.calendar_color",treatment.calendar_color)
+        // console.log("treatment.calendar_color",treatment.calendar_color)
         // יצירת אובייקט האירוע
         const eventDetails = {
             title: treatment.treatment_name + "-" + customer.first_name + " " + customer.last_name,
