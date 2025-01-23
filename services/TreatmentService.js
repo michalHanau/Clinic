@@ -18,6 +18,15 @@ class TreatmentService {
         return result;
     }
 
+    async getTreatmentNameById(id) {
+        let result = await treatmentModel.findOne({ treatment_id: id },{ _id: 0, treatment_id: 1, treatment_name: 1 });
+        if (!result) {
+            throw new Error('Treatment not found');
+        }
+        return result.treatment_name;
+    }
+    
+
     async getTreatmentDuration(treatmentId) {
         const id= Number(treatmentId)
         const treatment = await treatmentModel.findOne({ treatment_id: id }, { _id: 0, treatment_duration: 1 });

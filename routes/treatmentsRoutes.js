@@ -27,6 +27,19 @@ router.get('/name', async (req, res, next) => {
     }
 })
 
+router.get('/id/:id', async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const result = await controller.getTreatmentNameById(id);
+        res.json(result);
+    }
+    catch (error) {
+        if (error.message.startsWith('Not found'))
+            res.status(404).send(`Not found`);
+        next(error);
+    }
+})
+
 
 
 

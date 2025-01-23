@@ -15,6 +15,11 @@ class TreatmentController extends Controller {
         return treatments;
     }
 
+    async getTreatmentNameById(id){
+        const treatmentName = await this.service.getTreatmentNameById(id);
+        return treatmentName; 
+    }
+
 
 }
 
