@@ -10,7 +10,8 @@ class TreatmentController extends Controller {
         const data = await this.service.getTreatmentNames();
         const treatments = data.map(treatment => ({
             id: treatment.treatment_id,
-            name: treatment.treatment_name
+            name: treatment.treatment_name,
+            description : treatment.description
         }));
         return treatments;
     }

@@ -11,7 +11,7 @@ class TreatmentService {
     }
 
     async getTreatmentNames(){
-        let result = await treatmentModel.find({}, {_id: 0,treatment_id:1,treatment_name:1})
+        let result = await treatmentModel.find({}, {_id: 0,treatment_id:1,treatment_name:1,description:1})
         if (result.length == 0) {
             throw new Error('Not found')
         }
