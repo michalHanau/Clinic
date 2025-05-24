@@ -48,6 +48,6 @@ app.use((err, req, res, next) => {
     res.status(500).send('An error in app, please try later.')
 })
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`app is listening at http://localhost:${port}`)
 })
